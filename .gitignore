@@ -1,0 +1,27 @@
+# Global
+.DS_Store
+.codex
+
+# Environment files
+.env
+.env.local
+*.env.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Backend
+backend/node_modules
+backend/dist
+backend/.env
+
+# Frontend
+frontend/node_modules
+frontend/.next
+frontend/out
+frontend/.env
+frontend/.env.local

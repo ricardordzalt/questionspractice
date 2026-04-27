@@ -1,0 +1,7 @@
+.state {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}

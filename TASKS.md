@@ -2,23 +2,23 @@
 
 ## Phase 0 — Repository Foundation
 
-- [ ] Initialize NestJS backend
-- [ ] Configure PostgreSQL with Docker
-- [ ] Setup Prisma
-- [ ] Initialize Next.js frontend
-- [ ] Setup TanStack Query
-- [ ] Create base sidebar layout
+- [x] Initialize NestJS backend
+- [x] Configure PostgreSQL with Docker
+- [x] Setup Prisma
+- [x] Initialize Next.js frontend
+- [x] Setup TanStack Query
+- [x] Create base sidebar layout
 
 ## Phase 1 — Authentication
 
-- [ ] Register endpoint
-- [ ] Login endpoint
-- [ ] Logout endpoint
-- [ ] Current user endpoint
-- [ ] JWT HttpOnly cookie flow
-- [ ] Login page
-- [ ] Register page
-- [ ] Protected routes
+- [x] Register endpoint
+- [x] Login endpoint
+- [x] Logout endpoint
+- [x] Current user endpoint
+- [x] JWT HttpOnly cookie flow
+- [x] Login page
+- [x] Register page
+- [x] Protected routes
 
 ## Phase 2 — Core Content System
 

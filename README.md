@@ -79,3 +79,44 @@ To become a personal interview preparation system for experienced software devel
 ## First Principle
 
 Preparation should feel like training, not like reading.
+
+---
+
+## Local Infrastructure (PostgreSQL)
+
+Start PostgreSQL with Docker:
+
+```bash
+docker compose up -d postgres
+```
+
+Stop it:
+
+```bash
+docker compose down
+```
+
+Backend database connection template:
+
+```bash
+cp backend/.env.example backend/.env
+```
+
+## Local Development
+
+Backend:
+
+```bash
+cd backend
+npm install
+npm run start:dev
+```
+
+Frontend:
+
+```bash
+cd frontend
+npm install
+cp .env.example .env.local
+npm run dev
+```
