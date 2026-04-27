@@ -1,3 +1,5 @@
+import { PracticePage as PracticeFeaturePage } from '@/features/practice/ui/PracticePage';
+
 export default function PracticePage() {
-  return <h1>Practice</h1>;
+  return <PracticeFeaturePage />;
 }

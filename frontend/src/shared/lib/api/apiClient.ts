@@ -13,11 +13,21 @@ export class ApiClientError extends Error {
 }
 
 export async function apiRequest<T>(path: string, init?: RequestInit): Promise<T> {
+  const envelope = await apiRequestEnvelope<T>(path, init);
+  return envelope.data;
+}
+
+export async function apiRequestEnvelope<T>(
+  path: string,
+  init?: RequestInit,
+): Promise<ApiEnvelope<T>> {
+  const isFormDataBody = init?.body instanceof FormData;
+
   const response = await fetch(`${API_URL}${path}`, {
     ...init,
     credentials: 'include',
     headers: {
-      'Content-Type': 'application/json',
+      ...(isFormDataBody ? {} : { 'Content-Type': 'application/json' }),
       ...(init?.headers ?? {}),
     },
     cache: 'no-store',
@@ -35,5 +45,5 @@ export async function apiRequest<T>(path: string, init?: RequestInit): Promise<T
     );
   }
 
-  return payload.data;
+  return payload;
 }

@@ -1,26 +1,26 @@
 # HANDOFF
 
-Last updated: 2026-04-26
+Last updated: 2026-04-27
 Source of truth: TASKS.md
 
 ## Current Status
-Phase 0 and Phase 1 are complete. Phase 2 — Core Content System is next.
+All phases are complete (Phase 0 to Phase 6). MVP task list is fully done.
 
 ## Progress Snapshot
 - Total tasks: 33
-- Completed: 14
-- Remaining: 19
+- Completed: 33
+- Remaining: 0
 
 ## Phase Status
 - Phase 0 — Repository Foundation: completed (6/6)
 - Phase 1 — Authentication: completed (8/8)
-- Phase 2 — Core Content System: not started
-- Phase 3 — Import Engine: not started
-- Phase 4 — Practice Mode: not started
-- Phase 5 — Review System: not started
-- Phase 6 — UI Polish: not started
+- Phase 2 — Core Content System: completed (6/6)
+- Phase 3 — Import Engine: completed (4/4)
+- Phase 4 — Practice Mode: completed (5/5)
+- Phase 5 — Review System: completed (4/4)
+- Phase 6 — UI Polish: completed (5/5)
 
 ## Next Recommended Actions
-1. Start Phase 2 with Topics CRUD.
-2. Continue with Tags CRUD and Questions CRUD.
-3. Add Answers CRUD and question filters.
+1. Run full manual QA pass across auth, content CRUD, import, practice, and review flows.
+2. Add targeted e2e/integration tests for import validation and practice/review endpoints.
+3. Prepare deployment checklist and environment hardening (production JWT secret, CORS, cookie security).

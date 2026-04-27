@@ -48,6 +48,12 @@
   color: var(--color-text-primary);
 }
 
+.navLinkActive {
+  background: #e9efff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
 .main {
   padding: 28px;
 }

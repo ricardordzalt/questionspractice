@@ -1,3 +1,5 @@
+import { TopicsPage as TopicsFeaturePage } from '@/features/topics/ui/TopicsPage';
+
 export default function TopicsPage() {
-  return <h1>Topics</h1>;
+  return <TopicsFeaturePage />;
 }

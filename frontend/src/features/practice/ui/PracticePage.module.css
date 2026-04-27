@@ -1,0 +1,191 @@
+.wrapper {
+  max-width: 980px;
+  display: grid;
+  gap: 14px;
+}
+
+.title {
+  font-size: 1.65rem;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+}
+
+.panel {
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.input,
+.select {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 9px 11px;
+}
+
+.checkboxRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.92rem;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buttonGhost {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.progress {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.questionTitle {
+  font-size: 1.2rem;
+}
+
+.prompt {
+  line-height: 1.6;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.answers {
+  display: grid;
+  gap: 8px;
+}
+
+.answerCard {
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.answerType {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ratingRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ratingAgain,
+.ratingHard,
+.ratingGood,
+.ratingEasy {
+  border: none;
+  border-radius: 10px;
+  padding: 9px 12px;
+  color: white;
+  font-weight: 600;
+}
+
+.ratingAgain {
+  background: #dc2626;
+}
+
+.ratingHard {
+  background: #d97706;
+}
+
+.ratingGood {
+  background: #2563eb;
+}
+
+.ratingEasy {
+  background: #059669;
+}
+
+.help {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.summaryCard {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px;
+  background: #fbfcfe;
+}
+
+.summaryLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.summaryValue {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 980px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

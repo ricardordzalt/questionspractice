@@ -16,7 +16,142 @@ model User {
   id           String    @id @default(cuid())
   email        String    @unique
   passwordHash String
+  topics       Topic[]
+  tags         Tag[]
+  questions    Question[]
+  answers      Answer[]
+  practiceAttempts PracticeAttempt[]
+  reviewStates  ReviewState[]
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
   deletedAt    DateTime?
+}
+
+model Topic {
+  id          String          @id @default(cuid())
+  userId      String
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  slug        String
+  description String?
+  questions   QuestionTopic[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  deletedAt   DateTime?
+
+  @@index([userId, deletedAt])
+}
+
+model Tag {
+  id        String        @id @default(cuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  slug      String
+  questions QuestionTag[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  deletedAt DateTime?
+
+  @@index([userId, deletedAt])
+}
+
+model Question {
+  id          String          @id @default(cuid())
+  userId      String
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  prompt      String
+  difficulty  String
+  source      String?
+  notes       String?
+  topics      QuestionTopic[]
+  tags        QuestionTag[]
+  answers     Answer[]
+  practiceAttempts PracticeAttempt[]
+  reviewStates ReviewState[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  deletedAt   DateTime?
+
+  @@index([userId, deletedAt])
+}
+
+model QuestionTopic {
+  id         String    @id @default(cuid())
+  questionId String
+  topicId    String
+  question   Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  topic      Topic     @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  @@unique([questionId, topicId])
+  @@index([topicId, deletedAt])
+}
+
+model QuestionTag {
+  id         String    @id @default(cuid())
+  questionId String
+  tagId      String
+  question   Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  tag        Tag       @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  @@unique([questionId, tagId])
+  @@index([tagId, deletedAt])
+}
+
+model Answer {
+  id         String   @id @default(cuid())
+  userId     String
+  questionId String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  type       String
+  content    String
+  position   Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  deletedAt  DateTime?
+
+  @@index([userId, questionId, deletedAt])
+}
+
+model PracticeAttempt {
+  id             String   @id @default(cuid())
+  userId         String
+  questionId     String
+  rating         String
+  revealedAnswer Boolean  @default(true)
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question       Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  deletedAt      DateTime?
+
+  @@index([userId, questionId, createdAt])
+  @@index([userId, createdAt])
+}
+
+model ReviewState {
+  id             String   @id @default(cuid())
+  userId         String
+  questionId     String
+  status         String
+  confidence     Int      @default(1)
+  nextReviewAt   DateTime
+  lastReviewedAt DateTime?
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question       Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  deletedAt      DateTime?
+
+  @@unique([userId, questionId])
+  @@index([userId, nextReviewAt, deletedAt])
+  @@index([userId, confidence, deletedAt])
 }

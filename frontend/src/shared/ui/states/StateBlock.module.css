@@ -1,0 +1,19 @@
+.block {
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 18px;
+  background: #fbfcfe;
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}

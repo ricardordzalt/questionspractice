@@ -1,6 +1,9 @@
 export type ApiSuccessResponse<T> = {
   data: T;
-  meta: null;
+  meta: null | {
+    nextCursor: string | null;
+    hasNextPage: boolean;
+  };
   error: null;
 };
 
@@ -18,6 +21,17 @@ export function ok<T>(data: T): ApiSuccessResponse<T> {
   return {
     data,
     meta: null,
+    error: null,
+  };
+}
+
+export function okList<T>(
+  data: T[],
+  meta: { nextCursor: string | null; hasNextPage: boolean },
+): ApiSuccessResponse<T[]> {
+  return {
+    data,
+    meta,
     error: null,
   };
 }

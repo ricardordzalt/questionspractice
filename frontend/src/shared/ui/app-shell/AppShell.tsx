@@ -41,7 +41,13 @@ export function AppShell({ children }: AppShellProps) {
 
           <nav aria-label='Primary' className={styles.nav}>
             {navigationItems.map((item) => (
-              <Link className={styles.navLink} href={item.href} key={item.href}>
+              <Link
+                className={`${styles.navLink} ${
+                  pathname === item.href ? styles.navLinkActive : ''
+                }`}
+                href={item.href}
+                key={item.href}
+              >
                 {item.label}
               </Link>
             ))}

@@ -6,6 +6,11 @@ export type ApiError = {
 
 export type ApiEnvelope<T> = {
   data: T;
-  meta: null;
+  meta:
+    | null
+    | {
+        nextCursor: string | null;
+        hasNextPage: boolean;
+      };
   error: ApiError | null;
 };

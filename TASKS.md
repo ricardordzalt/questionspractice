@@ -22,39 +22,39 @@
 
 ## Phase 2 — Core Content System
 
-- [ ] Topics CRUD
-- [ ] Tags CRUD
-- [ ] Questions CRUD
-- [ ] Answers CRUD
-- [ ] Search and filters
-- [ ] Question add/edit drawer
+- [x] Topics CRUD
+- [x] Tags CRUD
+- [x] Questions CRUD
+- [x] Answers CRUD
+- [x] Search and filters
+- [x] Question add/edit drawer
 
 ## Phase 3 — Import Engine
 
-- [ ] JSON body import
-- [ ] JSON file import
-- [ ] Import validation
-- [ ] Import error display
+- [x] JSON body import
+- [x] JSON file import
+- [x] Import validation
+- [x] Import error display
 
 ## Phase 4 — Practice Mode
 
-- [ ] Practice session creation
-- [ ] Question reveal flow
-- [ ] Self-rating
-- [ ] Attempt saving
-- [ ] Session completion screen
+- [x] Practice session creation
+- [x] Question reveal flow
+- [x] Self-rating
+- [x] Attempt saving
+- [x] Session completion screen
 
 ## Phase 5 — Review System
 
-- [ ] Due review queue
-- [ ] Weak questions view
-- [ ] Review summary
-- [ ] Review practice mode
+- [x] Due review queue
+- [x] Weak questions view
+- [x] Review summary
+- [x] Review practice mode
 
 ## Phase 6 — UI Polish
 
-- [ ] Empty states
-- [ ] Loading states
-- [ ] Typography polish
-- [ ] Spacing polish
-- [ ] Keyboard shortcuts
+- [x] Empty states
+- [x] Loading states
+- [x] Typography polish
+- [x] Spacing polish
+- [x] Keyboard shortcuts
